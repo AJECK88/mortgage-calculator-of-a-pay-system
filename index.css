@@ -1,0 +1,273 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+
+}
+ #mortgage_repayment_input[type="checkbox"],
+ #mortgage_type_Interest_input[type="checkbox"]{
+    appearance:none;
+    border: solid black 1px;
+    background-color: white;
+    padding: 0;
+    width: 15px;
+    margin-right: .3rem;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  
+}
+.border_checkbox[type="checkbox"]{
+    border: solid orange 1px;
+}
+
+input[type="checkbox"]:checked::before{
+    content:"";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.6px;
+    top: 1.6px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    
+}
+.mortgage_form{
+    max-width:400px;
+    display: flex;
+    max-height: 350px;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 4rem 1rem 1rem;
+    background-color: rgb(252, 247, 241);
+    font-family:Arial, Helvetica, sans-serif
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+.clear{
+    font-size: 12px;
+    text-decoration: underline;
+    font-weight: 200;
+    cursor: pointer;
+    color: rgb(77, 76, 76);
+}
+label,.mortgage_type{
+    font-size: 12px;
+    font-weight: 200;
+    color: rgb(77, 76, 76);
+}
+input{
+    border: none;
+    outline: none;
+    background-color: inherit;
+    list-style: none;
+    padding: 0 0 0 .5rem;
+    width: 100%;
+    
+}
+button{
+    background-color:orange;
+    border: none;
+
+}
+.Mortgage_input{
+    display: flex;
+    flex-direction: row;
+    border: solid rgb(205, 205, 211) 2px;
+    border-radius: 5px;
+}
+.symbol{
+    background-color:rgb(205, 205, 211) ;
+    padding: .5rem;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 200;
+    color: rgb(77, 76, 76);
+}
+.mortgage_type_repayment , .mortgage_type_Interest_Only{
+    display: flex;
+    width: 100%;
+    padding: .5rem;
+    border: solid rgb(205, 205, 211) 2px;
+    border-radius: 5px;
+}
+.mortgage_type{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.mortgage_type label{
+    font-weight: 500;
+    font-size: 13px;
+    color: black;
+}
+.MortgageTermAndInterest{
+   display: flex;
+   justify-content: space-between;
+   gap: .5rem;
+   
+
+}
+
+.Mortgage_interest_container, .Mortgage_term_container{
+    display: flex;
+    flex-direction: row;
+    border: solid rgb(205, 205, 211) 2px;;
+  
+}
+.Calculate_Repayments{
+    display: flex;
+    align-items: center;
+    background-color: orange;
+    border-radius: 25px;
+    max-width: 200px;
+    padding: .5rem;
+    justify-content: center;
+}
+.Calculate_Repayments input{
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+.resultStillTo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    background-color: rgb(51, 58, 58);
+    color: white;
+    margin: auto;
+    height: 22.1rem;
+    padding: 1rem;
+    right:1.5rem;
+    position: absolute;
+    border-radius: 0 10px 10px 20%;
+
+}
+.mortgage_result{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    background-color: rgb(51, 58, 58);
+    color: white;
+    margin: auto;
+    height: 22rem;
+    padding: 1rem;
+    position: absolute;
+    right: 1rem;
+    border-radius: 0 10px 10px 20%;
+}
+.mortgage_flex{
+    display: flex;
+    align-items: center;
+    max-width: 680px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+ p {
+    font-size: 10px;
+    text-align: center;
+    margin-top: .9rem;
+}
+.infor{
+    font-size: 10px;
+    text-align: center;
+    margin-top: .9rem;
+    
+}
+.summaary_of_payment{
+    width: 85%;
+    height: 10rem;
+    margin-top: 2.7rem;
+    background-color: black;
+    border-top: solid .2rem  orange;
+    color: rgb(126, 123, 120);
+    border-radius: 15px;
+    padding: .5rem 2rem  .5rem 2rem ;
+}
+.summaary_of_payment p{
+    text-align: left;
+    margin-bottom: .5rem;
+}
+.summaary_of_payment .number-mothly_payment{
+    border-bottom: solid rgb(63, 62, 61) .1px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 1rem 0;
+
+
+}
+
+.number-repay{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+.number-mothly_payment{
+    font-size:2rem;
+    color: orange;
+}
+
+@media all and (max-width:650px){
+    .mortgage_flex{
+        flex-direction: column;
+    }
+    .mortgage_form{
+     padding: 1rem;
+     max-height: fit-content;
+   }
+    .resultStillTo{
+        width: 100%;
+        display: flex;
+        max-width: 400px;
+        border-radius: 0;
+        position:static;
+        height: fit-content;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mortgage_result{
+        max-width: 400px;
+        width: 100%;
+        display: none;
+        height: fit-content;
+        flex-direction: column;
+        position: static;
+        border-radius: 0;
+    }
+    body{
+        height: fit-content;
+        margin: 0;
+    }
+    
+}
+.active{
+    display: block;
+}
+.unactive{
+    display: none;
+}
+/* | erro notisfication */
+.erro{
+    color: red;
+    font-size: 10px;
+    margin: 0;
+}
